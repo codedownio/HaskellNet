@@ -3,6 +3,7 @@ name: ci
 on:
   pull_request:
   push:
+  workflow_dispatch:
 
 jobs:
   cabal:
@@ -21,6 +22,13 @@ jobs:
         - "9.8.4"
         - "9.10.2"
         - "9.12.2"
+        exclude:
+        # These don't work on GitHub CI anymore because they need llvm@13, which became
+        # disabled on 12/31/2024
+        - os: macOS-latest
+          ghc: 8.10.7
+        - os: macOS-latest
+          ghc: 9.0.2
 
     steps:
     - uses: actions/checkout@v4
