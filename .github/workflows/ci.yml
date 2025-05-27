@@ -75,7 +75,7 @@ jobs:
         - ghc: "9.4.8"
           resolver: lts-21.25
         - ghc: "9.6.7"
-          resolver: lts.22.44
+          resolver: lts-22.44
         - ghc: "9.8.4"
           resolver: lts-23.24
         - ghc: "9.10.2"
